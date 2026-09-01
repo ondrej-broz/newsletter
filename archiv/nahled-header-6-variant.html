@@ -1,0 +1,345 @@
+<title>Header klientského newsletteru</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter+Tight:wght@400;500;600;700&family=Lora:wght@400;500&display=swap">
+
+<style>
+:root{
+  --canvas:#D7D4CE;
+  --num:#8C877F;
+  --edge:rgba(0,0,0,.12);
+
+  --ev-orange:#E5712C;
+  --ev-orange-solid:#ED692C;
+  --ev-dark:#202020;
+  --ev-cream:#FDF8F2;
+  --ev-page:#F1EBE3;
+  --ev-ink:#1A1A1A;
+  --ev-ink-soft:#4A4A48;
+  --ev-util:#6B645C;
+  --ev-hair:#E6DED3;
+  --ev-grad:linear-gradient(90deg,#FAB418 0%,#ED692C 33%,#E9C623 66%,#BDD46B 100%);
+
+  --f-num:'IBM Plex Mono',monospace;
+  --f-ev:'Inter Tight','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --f-ev-serif:'Lora',Georgia,'Times New Roman',serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--canvas:#121211;--num:#6A665F;--edge:rgba(255,255,255,.14)}
+}
+:root[data-theme="dark"]{--canvas:#121211;--num:#6A665F;--edge:rgba(255,255,255,.14)}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);font-family:var(--f-ev);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1360px;margin:0 auto;padding:48px 24px 88px;display:flex;flex-direction:column;gap:52px}
+
+.set{display:flex;flex-direction:column;gap:10px}
+.n{font-family:var(--f-num);font-weight:500;font-size:11px;letter-spacing:.1em;color:var(--num)}
+.pair{display:flex;overflow-x:auto;padding:2px}
+.pair::before,.pair::after{content:"";flex:0 0 0;margin:auto}
+.pair>.h+.h{margin-left:20px}
+
+/* ═══ společné vrstvy headeru ═══ */
+.h{width:600px;flex:0 0 600px;text-align:left;box-shadow:0 1px 2px var(--edge),0 14px 34px -12px rgba(0,0,0,.3)}
+
+.h-util{height:40px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--ev-page)}
+.h-util span{font-weight:600;font-size:10px;line-height:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--ev-util)}
+.h-util .v{text-decoration:underline;text-underline-offset:2px;color:#4A4A48}
+
+.h-bar{height:72px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--ev-dark)}
+.h-logo{--logo-ink:#FFFFFF;--logo-cut:#FFFFFF;display:block;flex:0 0 auto}
+.h-logo svg{width:125px;height:24px;display:block}
+.h-svc{font-weight:600;font-size:10px;line-height:12px;letter-spacing:.20em;text-transform:uppercase;color:rgba(255,255,255,.45);white-space:nowrap}
+
+.h-rule{height:4px;background-color:var(--ev-orange-solid);background-image:var(--ev-grad)}
+
+.h-hero{padding:44px 32px 40px;background:var(--ev-cream)}
+.h-eyebrow{margin:0 0 14px;font-weight:600;font-size:11px;line-height:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--ev-orange)}
+.h-title{margin:0 0 16px;font-weight:700;font-size:34px;line-height:1.08;letter-spacing:-.03em;color:var(--ev-ink)}
+.h-title .d{color:var(--ev-orange)}
+.h-lead{margin:0 0 26px;font-family:var(--f-ev-serif);font-weight:400;font-size:18px;line-height:1.55;color:var(--ev-ink-soft);max-width:480px}
+.h-cta{display:inline-block;background:var(--ev-orange);color:#FFF;text-decoration:none;font-weight:600;font-size:15px;line-height:16px;letter-spacing:.01em;padding:15px 28px;border-radius:4px}
+
+/* tmavý stav — společný základ */
+.h.d .h-util{background:var(--ev-dark)}
+.h.d .h-util span{color:rgba(255,255,255,.5)}
+.h.d .h-util .v{color:rgba(255,255,255,.62)}
+.h.d .h-hero{background:var(--ev-dark)}
+.h.d .h-title{color:#FFF}
+.h.d .h-lead{color:rgba(255,255,255,.72)}
+
+/* ═══ 01 · tmavý brand bar ═══════════════════════════════ */
+/* bez úprav, používá společný základ */
+
+/* ═══ 02 · editorial krémový ═════════════════════════════ */
+.h02 .h-bar{height:64px;background:var(--ev-cream);border-bottom:1px solid var(--ev-hair)}
+.h02 .h-logo{--logo-ink:#202020;--logo-cut:#FDF8F2}
+.h02 .h-logo svg{width:118px}
+.h02 .h-svc{color:#8A8278;letter-spacing:.18em}
+.h02 .h-hero{padding:40px 32px 36px}
+.h02 .h-title{font-size:40px;letter-spacing:-.035em;margin-bottom:18px}
+.h02 .h-lead{font-size:19px;margin-bottom:22px;max-width:460px}
+.h02 .h-link{
+  display:inline-block;font-weight:600;font-size:15px;color:var(--ev-orange);text-decoration:none;
+  border-bottom:2px solid var(--ev-orange);padding-bottom:3px;
+}
+.h02 .h-link .ar{display:inline-block;margin-left:6px}
+.h02.d .h-bar{background:var(--ev-dark);border-bottom-color:rgba(255,255,255,.14)}
+.h02.d .h-logo{--logo-ink:#FFFFFF;--logo-cut:#FFFFFF}
+.h02.d .h-svc{color:rgba(255,255,255,.42)}
+
+/* ═══ 03 · celý tmavý hero ═══════════════════════════════ */
+.h03 .h-util{background:var(--ev-page)}
+.h03 .h-hero{background:var(--ev-dark);padding:40px 32px 42px}
+.h03 .h-logo{margin-bottom:36px}
+.h03 .h-logo svg{width:112px}
+.h03 .h-title{color:#FFF;font-size:38px;letter-spacing:-.032em}
+.h03 .h-lead{color:rgba(255,255,255,.72)}
+
+/* ═══ 04 · oranžový pás ══════════════════════════════════ */
+.h04 .h-bar{height:68px;justify-content:center}
+.h04 .h-logo svg{width:118px}
+.h04 .h-band{
+  height:46px;display:flex;align-items:center;justify-content:center;background:var(--ev-orange);
+  font-weight:600;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#FFF;text-align:center;
+}
+.h04 .h-hero{padding:40px 32px 38px}
+.h04 .h-title{font-size:32px}
+.h04 .h-cta{background:var(--ev-dark)}
+.h04.d .h-cta{background:var(--ev-orange)}
+
+/* ═══ 05 · centrovaný ════════════════════════════════════ */
+.h05 .h-util{justify-content:center}
+.h05 .h-util .v{display:none}
+.h05 .h-bar{height:80px;justify-content:center}
+.h05 .h-logo svg{width:130px}
+.h05 .h-hero{padding:44px 40px 42px;text-align:center}
+.h05 .h-title{font-size:32px;max-width:460px;margin-left:auto;margin-right:auto}
+.h05 .h-lead{max-width:420px;margin-left:auto;margin-right:auto}
+
+/* ═══ 06 · asymetrický dvousloupec ═══════════════════════ */
+.h06 .h-bar{height:96px;padding:0;align-items:stretch}
+.h06 .h-bar-l{flex:1 1 auto;display:flex;align-items:center;padding:0 24px;background:var(--ev-dark)}
+.h06 .h-bar-r{
+  flex:0 0 168px;background:var(--ev-orange);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:2px;
+}
+.h06 .h-iss{font-weight:700;font-size:34px;line-height:1;letter-spacing:-.03em;color:#FFF}
+.h06 .h-yr{font-weight:600;font-size:10px;letter-spacing:.20em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.h06 .h-hero{padding:40px 32px 38px}
+.h06 .h-title{font-size:32px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<svg width="0" height="0" aria-hidden="true" style="position:absolute" focusable="false">
+  <symbol id="ev-logo" viewBox="0 0 1002 192">
+    <path fill="var(--logo-ink,#FFFFFF)" d="M351.669 101.186H268.127C268.55 119.301 279.206 136.137 300.732 136.137C319.915 136.137 327.374 123.776 329.289 116.531H350.601C344.847 137.415 328.865 153.188 300.304 153.188C265.78 153.188 246.601 128.678 246.601 95.4325C246.601 61.3318 267.058 37.891 300.304 37.891C333.341 37.891 351.879 59.6303 351.879 93.2997C351.879 96.2832 351.879 99.4804 351.669 101.186ZM330.143 84.7765C330.143 67.7262 318.209 54.9414 299.667 54.9414C282.19 54.9414 269.405 66.8754 268.127 84.7765H330.143ZM396.837 149.99L358.052 41.3019H380.428L408.983 128.465H409.197L437.33 41.3019H459.07L420.284 149.99H396.837ZM495.283 149.99V41.3019H474.399V149.99H495.283ZM513.612 113.761H534.71C535.565 126.336 543.233 136.137 563.477 136.137C581.805 136.137 586.712 128.037 586.712 120.155C586.712 106.516 572.214 105.024 558.151 102.041C539.181 97.5653 517.45 92.0216 517.45 69.4316C517.45 50.6798 532.581 38.1047 558.792 38.1047C588.627 38.1047 602.903 54.0867 604.399 72.8424H583.301C581.805 64.529 577.334 54.9414 559.219 54.9414C545.148 54.9414 539.181 60.481 539.181 68.5808C539.181 79.8739 551.329 80.9422 566.674 84.3492C586.712 89.0381 608.443 94.7915 608.443 119.087C608.443 140.185 592.251 152.974 563.69 152.974C530.658 152.974 514.253 135.924 513.612 113.761ZM647.862 149.884V41.195H626.977V149.884H647.862ZM667.678 95.6461C667.678 61.7591 688.135 37.891 722.236 37.891C755.909 37.891 776.367 61.5455 776.367 95.4325C776.367 129.533 755.909 153.188 722.022 153.188C688.135 153.188 667.678 129.743 667.678 95.6461ZM754.627 95.6461C754.627 72.8424 744.395 55.3647 722.236 55.3647C699.642 55.3647 689.417 72.8424 689.417 95.6461C689.417 118.236 699.642 135.924 722.236 135.924C744.395 135.924 754.627 118.236 754.627 95.6461ZM889.519 74.5479V149.99H868.634V80.3012C868.634 65.811 862.24 56.0058 846.467 56.0058C828.566 56.0058 817.06 66.8754 817.06 83.2847V149.99H796.175V41.3019H817.06V54.9414H817.487C823.24 46.6279 834.533 38.1047 853.289 38.1047C873.319 38.1047 889.519 49.6114 889.519 74.5479ZM906.984 113.761H928.083C928.937 126.336 936.606 136.137 956.857 136.137C975.186 136.137 980.084 128.037 980.084 120.155C980.084 106.516 965.594 105.024 951.531 102.041C932.562 97.5653 910.823 92.0216 910.823 69.4316C910.823 50.6798 925.954 38.1047 952.164 38.1047C982.008 38.1047 996.284 54.0867 997.772 72.8424H976.674C975.186 64.529 970.707 54.9414 952.592 54.9414C938.529 54.9414 932.562 60.481 932.562 68.5808C932.562 79.8739 944.71 80.9422 960.055 84.3492C980.084 89.0381 1001.82 94.7915 1001.82 119.087C1001.82 140.185 985.624 152.974 957.071 152.974C924.039 152.974 907.625 135.924 906.984 113.761Z"/>
+    <path fill="#E5712C" d="M637.42 31.6715C644.292 31.6715 649.864 26.0999 649.864 19.2271C649.864 12.3542 644.292 6.78263 637.42 6.78263C630.547 6.78263 624.975 12.3542 624.975 19.2271C624.975 26.0999 630.547 31.6715 637.42 31.6715Z"/>
+    <path fill="#E5712C" d="M484.841 31.6715C491.714 31.6715 497.285 26.0999 497.285 19.2271C497.285 12.3542 491.714 6.78263 484.841 6.78263C477.968 6.78263 472.397 12.3542 472.397 19.2271C472.397 26.0999 477.968 31.6715 484.841 31.6715Z"/>
+    <path fill="#E5712C" d="M191.079 191.077H168.078V116.605C168.078 64.9912 126.087 23 74.4722 23H0V0H74.4722C138.769 0 191.079 52.3086 191.079 116.605V191.077Z"/>
+    <path fill="var(--logo-cut,#FFFFFF)" d="M74.4717 46H8.59375e-06L0 69H74.4717C83.4399 69 91.8349 71.4957 99.0042 75.8246L0.0122611 174.815L16.2761 191.079L115.264 92.0925C119.586 99.2574 122.077 107.645 122.077 116.605V191.077H145.078V116.605C145.078 77.6733 113.404 46 74.4717 46Z"/>
+  </symbol>
+</svg>
+
+<div class="wrap">
+
+  <!-- 01 ─ tmavý brand bar ─────────────────────────────── -->
+  <section class="set">
+    <span class="n">01</span>
+    <div class="pair">
+      <div class="h h01">
+        <div class="h-util"><span>Klientský newsletter · leden 2026</span><span class="v">Zobrazit v prohlížeči</span></div>
+        <div class="h-bar">
+          <span class="h-logo"><svg viewBox="0 0 1002 192" role="img" aria-label="evisions"><use href="#ev-logo"></use></svg></span>
+          <span class="h-svc">SEO · PPC · UX · Social</span>
+        </div>
+        <div class="h-rule"></div>
+        <div class="h-hero">
+          <p class="h-eyebrow">Predikce na rok 2026</p>
+          <p class="h-title">Věštíme, co přinese 2026 v marketingu<span class="d">.</span></p>
+          <p class="h-lead">Vytáhli jsme křišťálovou kouli a zeptali se čtyř specialistů, co čekat v novém roce.</p>
+          <a class="h-cta" href="#01">Přečíst celé vydání</a>
+        </div>
+      </div>
+      <div class="h h01 d">
+        <div class="h-util"><span>Klientský newsletter · leden 2026</span><span class="v">Zobrazit v prohlížeči</span></div>
+        <div class="h-bar">
+          <span class="h-logo"><svg viewBox="0 0 1002 192" role="img" aria-label="evisions"><use href="#ev-logo"></use></svg></span>
+          <span class="h-svc">SEO · PPC · UX · Social</span>
+        </div>
+        <div class="h-rule"></div>
+        <div class="h-hero">
+          <p class="h-eyebrow">Predikce na rok 2026</p>
+          <p class="h-title">Věštíme, co přinese 2026 v marketingu<span class="d">.</span></p>
+          <p class="h-lead">Vytáhli jsme křišťálovou kouli a zeptali se čtyř specialistů, co čekat v novém roce.</p>
+          <a class="h-cta" href="#01d">Přečíst celé vydání</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 ─ editorial krémový ───────────────────────────── -->
+  <section class="set">
+    <span class="n">02</span>
+    <div class="pair">
+      <div class="h h02">
+        <div class="h-bar">
+          <span class="h-logo"><svg viewBox="0 0 1002 192" role="img" aria-label="evisions"><use href="#ev-logo"></use></svg></span>
+          <span class="h-svc">Leden 2026</span>
+        </div>
+        <div class="h-hero">
+          <p class="h-title">Věštíme, co přinese 2026 v marketingu<span class="d">.</span></p>
+          <p class="h-lead">Vytáhli jsme křišťálovou kouli a zeptali se čtyř specialistů, co čekat v novém roce.</p>
+          <a class="h-link" href="#02">Přečíst celé vydání<span class="ar">→</span></a>
+        </div>
+        <div class="h-rule"></div>
+      </div>
+      <div class="h h02 d">
+        <div class="h-bar">
+          <span class="h-logo"><svg viewBox="0 0 1002 192" role="img" aria-label="evisions"><use href="#ev-logo"></use></svg></span>
+          <span class="h-svc">Leden 2026</span>
+        </div>
+        <div class="h-hero">
+          <p class="h-title">Věštíme, co přinese 2026 v marketingu<span class="d">.</span></p>
+          <p class="h-lead">Vytáhli jsme křišťálovou kouli a zeptali se čtyř specialistů, co čekat v novém roce.</p>
+          <a class="h-link" href="#02d">Přečíst celé vydání<span class="ar">→</span></a>
+        </div>
+        <div class="h-rule"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 ─ celý tmavý hero ─────────────────────────────── -->
+  <section class="set">
+    <span class="n">03</span>
+    <div class="pair">
+      <div class="h h03">
+        <div class="h-util"><span>Klientský newsletter · leden 2026</span><span class="v">Zobrazit v prohlížeči</span></div>
+        <div class="h-hero">
+          <span class="h-logo"><svg viewBox="0 0 1002 192" role="img" aria-label="evisions"><use href="#ev-logo"></use></svg></span>
+          <p class="h-eyebrow">Predikce na rok 2026</p>
+          <p class="h-title">Věštíme, co přinese 2026 v marketingu<span class="d">.</span></p>
+          <p class="h-lead">Vytáhli jsme křišťálovou kouli a zeptali se čtyř specialistů, co čekat v novém roce.</p>
+          <a class="h-cta" href="#03">Přečíst celé vydání</a>
+        </div>
+        <div class="h-rule"></div>
+      </div>
+      <div class="h h03 d">
+        <div class="h-util"><span>Klientský newsletter · leden 2026</span><span class="v">Zobrazit v prohlížeči</span></div>
+        <div class="h-hero">
+          <span class="h-logo"><svg viewBox="0 0 1002 192" role="img" aria-label="evisions"><use href="#ev-logo"></use></svg></span>
+          <p class="h-eyebrow">Predikce na rok 2026</p>
+          <p class="h-title">Věštíme, co přinese 2026 v marketingu<span class="d">.</span></p>
+          <p class="h-lead">Vytáhli jsme křišťálovou kouli a zeptali se čtyř specialistů, co čekat v novém roce.</p>
+          <a class="h-cta" href="#03d">Přečíst celé vydání</a>
+        </div>
+        <div class="h-rule"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 ─ oranžový pás ────────────────────────────────── -->
+  <section class="set">
+    <span class="n">04</span>
+    <div class="pair">
+      <div class="h h04">
+        <div class="h-util"><span>Klientský newsletter · leden 2026</span><span class="v">Zobrazit v prohlížeči</span></div>
+        <div class="h-bar">
+          <span class="h-logo"><svg viewBox="0 0 1002 192" role="img" aria-label="evisions"><use href="#ev-logo"></use></svg></span>
+        </div>
+        <div class="h-band">Predikce na rok 2026 · vydání 01</div>
+        <div class="h-hero">
+          <p class="h-title">Věštíme, co přinese 2026 v marketingu<span class="d">.</span></p>
+          <p class="h-lead">Vytáhli jsme křišťálovou kouli a zeptali se čtyř specialistů, co čekat v novém roce.</p>
+          <a class="h-cta" href="#04">Přečíst celé vydání</a>
+        </div>
+      </div>
+      <div class="h h04 d">
+        <div class="h-util"><span>Klientský newsletter · leden 2026</span><span class="v">Zobrazit v prohlížeči</span></div>
+        <div class="h-bar">
+          <span class="h-logo"><svg viewBox="0 0 1002 192" role="img" aria-label="evisions"><use href="#ev-logo"></use></svg></span>
+        </div>
+        <div class="h-band">Predikce na rok 2026 · vydání 01</div>
+        <div class="h-hero">
+          <p class="h-title">Věštíme, co přinese 2026 v marketingu<span class="d">.</span></p>
+          <p class="h-lead">Vytáhli jsme křišťálovou kouli a zeptali se čtyř specialistů, co čekat v novém roce.</p>
+          <a class="h-cta" href="#04d">Přečíst celé vydání</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 ─ centrovaný ──────────────────────────────────── -->
+  <section class="set">
+    <span class="n">05</span>
+    <div class="pair">
+      <div class="h h05">
+        <div class="h-util"><span>Klientský newsletter · leden 2026</span><span class="v">Zobrazit v prohlížeči</span></div>
+        <div class="h-bar">
+          <span class="h-logo"><svg viewBox="0 0 1002 192" role="img" aria-label="evisions"><use href="#ev-logo"></use></svg></span>
+        </div>
+        <div class="h-rule"></div>
+        <div class="h-hero">
+          <p class="h-eyebrow">Predikce na rok 2026</p>
+          <p class="h-title">Věštíme, co přinese 2026 v marketingu<span class="d">.</span></p>
+          <p class="h-lead">Vytáhli jsme křišťálovou kouli a zeptali se čtyř specialistů, co čekat v novém roce.</p>
+          <a class="h-cta" href="#05">Přečíst celé vydání</a>
+        </div>
+      </div>
+      <div class="h h05 d">
+        <div class="h-util"><span>Klientský newsletter · leden 2026</span><span class="v">Zobrazit v prohlížeči</span></div>
+        <div class="h-bar">
+          <span class="h-logo"><svg viewBox="0 0 1002 192" role="img" aria-label="evisions"><use href="#ev-logo"></use></svg></span>
+        </div>
+        <div class="h-rule"></div>
+        <div class="h-hero">
+          <p class="h-eyebrow">Predikce na rok 2026</p>
+          <p class="h-title">Věštíme, co přinese 2026 v marketingu<span class="d">.</span></p>
+          <p class="h-lead">Vytáhli jsme křišťálovou kouli a zeptali se čtyř specialistů, co čekat v novém roce.</p>
+          <a class="h-cta" href="#05d">Přečíst celé vydání</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 ─ asymetrický dvousloupec ─────────────────────── -->
+  <section class="set">
+    <span class="n">06</span>
+    <div class="pair">
+      <div class="h h06">
+        <div class="h-util"><span>Klientský newsletter · leden 2026</span><span class="v">Zobrazit v prohlížeči</span></div>
+        <div class="h-bar">
+          <div class="h-bar-l">
+            <span class="h-logo"><svg viewBox="0 0 1002 192" role="img" aria-label="evisions"><use href="#ev-logo"></use></svg></span>
+          </div>
+          <div class="h-bar-r"><span class="h-iss">01</span><span class="h-yr">2026</span></div>
+        </div>
+        <div class="h-rule"></div>
+        <div class="h-hero">
+          <p class="h-eyebrow">Predikce na rok 2026</p>
+          <p class="h-title">Věštíme, co přinese 2026 v marketingu<span class="d">.</span></p>
+          <p class="h-lead">Vytáhli jsme křišťálovou kouli a zeptali se čtyř specialistů, co čekat v novém roce.</p>
+          <a class="h-cta" href="#06">Přečíst celé vydání</a>
+        </div>
+      </div>
+      <div class="h h06 d">
+        <div class="h-util"><span>Klientský newsletter · leden 2026</span><span class="v">Zobrazit v prohlížeči</span></div>
+        <div class="h-bar">
+          <div class="h-bar-l">
+            <span class="h-logo"><svg viewBox="0 0 1002 192" role="img" aria-label="evisions"><use href="#ev-logo"></use></svg></span>
+          </div>
+          <div class="h-bar-r"><span class="h-iss">01</span><span class="h-yr">2026</span></div>
+        </div>
+        <div class="h-rule"></div>
+        <div class="h-hero">
+          <p class="h-eyebrow">Predikce na rok 2026</p>
+          <p class="h-title">Věštíme, co přinese 2026 v marketingu<span class="d">.</span></p>
+          <p class="h-lead">Vytáhli jsme křišťálovou kouli a zeptali se čtyř specialistů, co čekat v novém roce.</p>
+          <a class="h-cta" href="#06d">Přečíst celé vydání</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

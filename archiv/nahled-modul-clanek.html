@@ -1,0 +1,190 @@
+<title>Článkový modul newsletteru</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter+Tight:wght@400;500;600;700&family=Lora:wght@400;500&display=swap">
+
+<style>
+:root{
+  --canvas:#D7D4CE;
+  --num:#8C877F;
+  --edge:rgba(0,0,0,.12);
+
+  /* evisions — nezávislé na theme náhledu, jsou to brand hodnoty */
+  --ev-orange:#E5712C;
+  --ev-orange-ink:#C25A1E;      /* ztmavená pro text na krémové, 4,6:1 */
+  --ev-orange-solid:#ED692C;
+  --ev-dark:#202020;
+  --ev-surface:#2A2A28;         /* karta na tmavé */
+  --ev-cream:#FDF8F2;
+  --ev-ink:#1A1A1A;
+  --ev-ink-soft:#4A4A48;
+  --ev-hair:#E6DED3;
+  --ev-hair-d:rgba(255,255,255,.13);
+  --ev-grad:linear-gradient(90deg,#FAB418 0%,#ED692C 33%,#E9C623 66%,#BDD46B 100%);
+
+  --f-num:'IBM Plex Mono',monospace;
+  --f-ev:'Inter Tight','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --f-ev-serif:'Lora',Georgia,'Times New Roman',serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--canvas:#121211;--num:#6A665F;--edge:rgba(255,255,255,.14)}
+}
+:root[data-theme="dark"]{--canvas:#121211;--num:#6A665F;--edge:rgba(255,255,255,.14)}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);font-family:var(--f-ev);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1360px;margin:0 auto;padding:48px 24px 88px;display:flex;flex-direction:column;gap:52px}
+.set{display:flex;flex-direction:column;gap:10px}
+.n{font-family:var(--f-num);font-weight:500;font-size:11px;letter-spacing:.1em;color:var(--num)}
+.pair{display:flex;overflow-x:auto;padding:2px}
+.pair::before,.pair::after{content:"";flex:0 0 0;margin:auto}
+.pair>.m+.m{margin-left:20px}
+
+/* ═══ modul ═══ */
+.m{width:600px;flex:0 0 600px;text-align:left;background:var(--ev-cream);
+   box-shadow:0 1px 2px var(--edge),0 14px 34px -12px rgba(0,0,0,.3)}
+.m.d{background:var(--ev-dark)}
+
+.m-inner{padding:40px 32px 42px}
+
+.m-sec{
+  display:flex;align-items:center;gap:14px;margin:0 0 22px;
+  font-weight:600;font-size:11px;line-height:14px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ev-orange-ink);
+}
+.m.d .m-sec{color:var(--ev-orange)}
+.m-sec::after{content:"";flex:1 1 auto;height:1px;background:var(--ev-hair)}
+.m.d .m-sec::after{background:var(--ev-hair-d)}
+
+.m-title{margin:0 0 14px;font-weight:700;font-size:26px;line-height:1.14;letter-spacing:-.022em;color:var(--ev-ink)}
+.m.d .m-title{color:#FFF}
+.m-title .d{color:var(--ev-orange)}
+
+.m-body{margin:0 0 12px;font-family:var(--f-ev-serif);font-weight:400;font-size:17px;line-height:1.62;
+        color:var(--ev-ink-soft);max-width:62ch}
+.m.d .m-body{color:rgba(255,255,255,.74)}
+.m-body b{font-weight:500;color:var(--ev-ink)}
+.m.d .m-body b{color:#FFF}
+.m-body:last-of-type{margin-bottom:26px}
+
+/* odkaz: tmavý text s oranžovým podtržením — oranžový text má na krémové jen 3,1:1 */
+.m-link{
+  display:inline-block;font-family:var(--f-ev);font-weight:600;font-size:15px;line-height:1.3;
+  color:var(--ev-ink);text-decoration:none;
+  border-bottom:2px solid var(--ev-orange);padding-bottom:3px;
+}
+.m.d .m-link{color:#FFF}
+.m-link .ar{display:inline-block;margin-left:7px;color:var(--ev-orange-ink)}
+.m.d .m-link .ar{color:var(--ev-orange)}
+.m-link:focus-visible{outline:2px solid var(--ev-orange);outline-offset:3px}
+
+.m-cta{
+  display:inline-block;background:var(--ev-orange);color:#FFF;text-decoration:none;
+  font-weight:600;font-size:15px;line-height:16px;letter-spacing:.01em;padding:14px 26px;border-radius:4px;
+}
+.m-cta:focus-visible{outline:2px solid var(--ev-ink);outline-offset:3px}
+.m.d .m-cta:focus-visible{outline-color:#FFF}
+
+/* ═══ B · oranžový chip sekce + tlačítko ═══ */
+.mB .m-sec{
+  display:inline-block;padding:6px 11px 5px;background:var(--ev-orange);color:#FFF;
+  border-radius:3px;letter-spacing:.18em;margin-bottom:20px;
+}
+/* musí přebít `.m.d .m-sec` (vyšší specificita), jinak je na chipu oranžová na oranžové */
+.mB.d .m-sec{color:#FFF}
+.mB .m-sec::after{display:none}
+
+/* ═══ C · karta na ploše ═══ */
+.mC{background:#F1EBE3;padding:24px}
+.mC.d{background:#171716}
+.mC .m-inner{background:#FFFFFF;padding:34px 30px 36px;border-radius:4px;
+             box-shadow:0 1px 2px rgba(26,26,26,.10),0 2px 6px rgba(26,26,26,.05)}
+.mC.d .m-inner{background:var(--ev-surface);box-shadow:0 1px 2px rgba(0,0,0,.5)}
+
+@media (max-width:640px){
+  .m-inner{padding:30px 22px 32px}
+  .m-title{font-size:23px}
+  .m-body{font-size:16.5px}
+  .mC{padding:14px}
+  .mC .m-inner{padding:26px 20px 28px}
+}
+</style>
+
+<div class="wrap">
+
+  <!-- A ─ editorial: sekce jako eyebrow s linkou, odkaz s podtržením ─── -->
+  <section class="set">
+    <span class="n">A</span>
+    <div class="pair">
+      <div class="m mA">
+        <div class="m-inner">
+          <p class="m-sec">SEO</p>
+          <p class="m-title">SEO neumírá. Jen se mění<span class="d">.</span></p>
+          <p class="m-body">S nástupem AI do vyhledávání se změnilo chování uživatelů a mnoho webů přišlo o část organických prokliků. To je nová realita.</p>
+          <p class="m-body">Vidět budou ti, kdo vsadí na technicky čistý web, rychlost, EEAT a obsah postavený na <b>skutečných potřebách uživatelů</b>. Ze Search Engine Optimisation se stává Search Everywhere Optimisation.</p>
+          <a class="m-link" href="#a">Zjistit, jak mě vidí AI<span class="ar">→</span></a>
+        </div>
+      </div>
+      <div class="m mA d">
+        <div class="m-inner">
+          <p class="m-sec">SEO</p>
+          <p class="m-title">SEO neumírá. Jen se mění<span class="d">.</span></p>
+          <p class="m-body">S nástupem AI do vyhledávání se změnilo chování uživatelů a mnoho webů přišlo o část organických prokliků. To je nová realita.</p>
+          <p class="m-body">Vidět budou ti, kdo vsadí na technicky čistý web, rychlost, EEAT a obsah postavený na <b>skutečných potřebách uživatelů</b>. Ze Search Engine Optimisation se stává Search Everywhere Optimisation.</p>
+          <a class="m-link" href="#ad">Zjistit, jak mě vidí AI<span class="ar">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B ─ oranžový chip sekce + tlačítko ────────────────────────────── -->
+  <section class="set">
+    <span class="n">B</span>
+    <div class="pair">
+      <div class="m mB">
+        <div class="m-inner">
+          <p class="m-sec">SEO</p>
+          <p class="m-title">SEO neumírá. Jen se mění<span class="d">.</span></p>
+          <p class="m-body">S nástupem AI do vyhledávání se změnilo chování uživatelů a mnoho webů přišlo o část organických prokliků. To je nová realita.</p>
+          <p class="m-body">Vidět budou ti, kdo vsadí na technicky čistý web, rychlost, EEAT a obsah postavený na <b>skutečných potřebách uživatelů</b>. Ze Search Engine Optimisation se stává Search Everywhere Optimisation.</p>
+          <a class="m-cta" href="#b">Zjistit, jak mě vidí AI</a>
+        </div>
+      </div>
+      <div class="m mB d">
+        <div class="m-inner">
+          <p class="m-sec">SEO</p>
+          <p class="m-title">SEO neumírá. Jen se mění<span class="d">.</span></p>
+          <p class="m-body">S nástupem AI do vyhledávání se změnilo chování uživatelů a mnoho webů přišlo o část organických prokliků. To je nová realita.</p>
+          <p class="m-body">Vidět budou ti, kdo vsadí na technicky čistý web, rychlost, EEAT a obsah postavený na <b>skutečných potřebách uživatelů</b>. Ze Search Engine Optimisation se stává Search Everywhere Optimisation.</p>
+          <a class="m-cta" href="#bd">Zjistit, jak mě vidí AI</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- C ─ karta na ploše ───────────────────────────────────────────── -->
+  <section class="set">
+    <span class="n">C</span>
+    <div class="pair">
+      <div class="m mC">
+        <div class="m-inner">
+          <p class="m-sec">SEO</p>
+          <p class="m-title">SEO neumírá. Jen se mění<span class="d">.</span></p>
+          <p class="m-body">S nástupem AI do vyhledávání se změnilo chování uživatelů a mnoho webů přišlo o část organických prokliků. To je nová realita.</p>
+          <p class="m-body">Vidět budou ti, kdo vsadí na technicky čistý web, rychlost, EEAT a obsah postavený na <b>skutečných potřebách uživatelů</b>. Ze Search Engine Optimisation se stává Search Everywhere Optimisation.</p>
+          <a class="m-link" href="#c">Zjistit, jak mě vidí AI<span class="ar">→</span></a>
+        </div>
+      </div>
+      <div class="m mC d">
+        <div class="m-inner">
+          <p class="m-sec">SEO</p>
+          <p class="m-title">SEO neumírá. Jen se mění<span class="d">.</span></p>
+          <p class="m-body">S nástupem AI do vyhledávání se změnilo chování uživatelů a mnoho webů přišlo o část organických prokliků. To je nová realita.</p>
+          <p class="m-body">Vidět budou ti, kdo vsadí na technicky čistý web, rychlost, EEAT a obsah postavený na <b>skutečných potřebách uživatelů</b>. Ze Search Engine Optimisation se stává Search Everywhere Optimisation.</p>
+          <a class="m-link" href="#cd">Zjistit, jak mě vidí AI<span class="ar">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

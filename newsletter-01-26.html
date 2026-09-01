@@ -1,0 +1,894 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="cs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="color-scheme" content="light dark" />
+<meta name="supported-color-schemes" content="light dark" />
+<title>Klientský newsletter evisions</title>
+
+<!-- --------------------------------------------------------------
+     Klientsky newsletter evisions - vydani 01/2026
+     Hotovy e-mail k vlozeni do SmartEmailingu (Kampane > E-maily > Vytvorit novy e-mail).
+
+     Obsah souboru (bloky v poradi, v jakem jsou v dokumentu):
+       01  Hlavička s logem
+       02  Hero – fotka s textem
+       03  Gradientní lišta
+       04  Nadpis sekce
+       05  Text s odkazem
+       06  Citace s portrétem
+       07  Citace s portrétem
+       08  Citace s portrétem
+       09  Citace s portrétem
+       10  Nadpis sekce
+       11  Text s odkazem
+       12  CTA tlačítko
+       13  Nadpis sekce
+       14  Text s odkazem
+       15  Nadpis sekce
+       16  Text s odkazem
+       17  Nadpis sekce
+       18  Text s odkazem
+       19  Tři obrázky
+       20  Text s odkazem
+       21  Tři obrázky bez popisků
+       22  Nadpis sekce
+       23  Byline s portrétem
+       24  Tip pod čarou
+       25  Tip pod čarou
+       26  Tip pod čarou
+       27  Tip pod čarou
+       28  Tip pod čarou
+       29  Patička
+
+     Sirka kolony 600 px. Vsechny styly jsou inline; ve stylopisu
+     v hlavicce zustavaji jen media query pro mobil a dark mode.
+     ZADNE ne-ASCII znaky v komentarich - v quoted-printable maji 3x
+     objem a Gmail seka zpravy nad 102 kB zakodovane velikosti.
+     Barvy nemenit bez kontroly kontrastu - duvody jsou v README.md.
+     -------------------------------------------------------------- -->
+
+
+<!--[if gte mso 9]><xml>
+  <o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings>
+</xml><![endif]-->
+
+<!-- Webfonty: fungují v Apple Mail, iOS Mail, Outlook mac/iOS/Android a Thunderbirdu.
+     Gmail a Outlook pro Windows je ignorují a spadnou na Arial / Georgia — proto má
+     každý nadpis ve fallbacku menší velikost a menší tracking (viz .fb-* níže). -->
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;700&amp;family=Lora:wght@400;500&amp;display=swap" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+  /* ── resety ──────────────────────────────────────────────────────── */
+  body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+  table,td{mso-table-lspace:0pt;mso-table-rspace:0pt}
+  table{border-collapse:collapse !important}
+  img{border:0;height:auto;line-height:100%;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;display:block}
+  body{margin:0 !important;padding:0 !important;width:100% !important}
+  a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !important;font-size:inherit !important;font-family:inherit !important;font-weight:inherit !important;line-height:inherit !important}
+  .ExternalClass{width:100%}
+  .ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div{line-height:100%}
+
+  /* ── mobil ───────────────────────────────────────────────────────── */
+  @media only screen and (max-width:620px){
+    .w600{width:100% !important;max-width:100% !important}
+    .pad32{padding-left:20px !important;padding-right:20px !important}
+    .pad-sec{padding-top:30px !important;padding-bottom:32px !important}
+    .hide-m{display:none !important;mso-hide:all}
+    .h1-m{font-size:26px !important;line-height:1.1 !important;letter-spacing:-0.02em !important}
+    .h2-m{font-size:22px !important;line-height:1.18 !important}
+    .p-m{font-size:16px !important}
+    .lead-m{font-size:17px !important}
+    .btn-m{display:block !important;width:100% !important;text-align:center !important}
+    .stack{display:block !important;width:100% !important;padding-left:0 !important;padding-right:0 !important}
+    .stack-gap{padding-bottom:12px !important}
+    .hero-bg{background-size:cover !important;background-position:center center !important}
+    .hero-spacer{height:158px !important}
+    .thumb-m{width:76px !important}
+    .thumb-m img{width:76px !important;height:95px !important}
+    .portrait-m img{width:60px !important;height:60px !important}
+  }
+
+  /* ── dark mode ───────────────────────────────────────────────────────
+     Respektují Apple Mail, iOS Mail, Outlook mac/iOS/Android.
+     Gmail app a Outlook.com si invertují po svém a tyhle třídy ignorují —
+     proto je světlá verze navržená tak, aby cizí inverzi přežila.
+     Inline styly mají přednost, takže tady je !important nutnost. */
+  @media (prefers-color-scheme: dark){
+    .dk-page{background-color:#202020 !important}
+    .dk-surface{background-color:#202020 !important}
+    .dk-surface-2{background-color:#191919 !important}
+    .dk-white{color:#FFFFFF !important}
+    .dk-soft{color:#BFBBB6 !important}
+    .dk-orange{color:#E5712C !important}
+    .dk-hair{border-top-color:#333330 !important}
+    .dk-caption{color:#8F8B86 !important}
+  }
+  /* Outlook.com / Windows Mail v tmavém režimu */
+  [data-ogsc] .dk-page,[data-ogsb] .dk-page{background-color:#202020 !important}
+  [data-ogsc] .dk-surface{background-color:#202020 !important}
+  [data-ogsc] .dk-surface-2{background-color:#191919 !important}
+  [data-ogsc] .dk-white{color:#FFFFFF !important}
+  [data-ogsc] .dk-soft{color:#BFBBB6 !important}
+  [data-ogsc] .dk-orange{color:#E5712C !important}
+  [data-ogsc] .dk-hair{border-top-color:#333330 !important}
+  [data-ogsc] .btn-keep{color:#FFFFFF !important}
+
+  /* ── fallback bez webfontu ──────────────────────────────────────────
+     Arial má širší znak než Inter Tight; bez kompenzace se nadpis zalomí
+     o řádek dřív a vytlačí CTA pod zlom. mso-* platí jen pro Outlook. */
+  .h1{mso-line-height-rule:exactly}
+  @font-face{font-family:'Inter Tight';font-style:normal;font-weight:400;src:local('Inter Tight')}
+</style>
+</head>
+
+<!-- Kazdy blok nize je samostatna tabulka na 100 % sirky s vnorenou
+     tabulkou na 600 px. Bloky se navzajem nezanoruji, takze se daji
+     prehazovat, duplikovat i mazat po celych celcich. -->
+<body style="margin:0;padding:0;background-color:#FDF8F2;" bgcolor="#FDF8F2" class="dk-page">
+<!-- Preheader: 40-90 znaku, nesmi opakovat predmet. Vyplnove znaky za textem
+     brani tomu, aby se do nahledu v inboxu propsal zacatek tela mailu.
+     POZOR: nektere editory ESP skryte elementy zahazuji - po vlozeni overit,
+     ze tento div v odeslanem HTML zustal. -->
+<div style="display:none;font-size:1px;color:#FDF8F2;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">
+  Vytáhli jsme křišťálovou kouli a zeptali se, co čekat v novém roce.
+  &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+</div>
+
+<!-- Cely e-mail je JEDNA vnejsi tabulka. Duvod: importer ESP muze kazdou
+     tabulku na urovni <body> vyhodnotit jako samostatny prvek a pridat ji
+     vlastni vertikalni odsazeni. Jeden wrapper tomu zabrani.
+     width="100%" na wrapperu i na blocich drzi barevne plochy full-bleed. -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-page" style="background-color:#FDF8F2;">
+<tr>
+<td align="center" valign="top" style="padding:0;">
+<!-- 01 | Hlavička s logem -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#202020" style="background-color:#202020;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" valign="middle" height="72" style="height:72px;padding:0 24px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td align="left" valign="middle" style="padding:0;">
+                  <a href="https://www.evisions.cz/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=klientsky-nl-01-26" target="_blank" style="text-decoration:none;">
+                    <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/logo-white.png" width="125" height="24" alt="evisions" style="display:block;width:125px;height:24px;border:0;color:#FFFFFF;font-family:'Inter Tight',Arial,sans-serif;font-size:20px;font-weight:700;" />
+                  </a>
+                </td>
+                <td class="hide-m" align="right" valign="middle" style="padding:0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:10px;line-height:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#A8A29B;white-space:nowrap;">
+                  SEO&nbsp;· PPC&nbsp;· UX&nbsp;· Social
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 02 | Hero – fotka s textem -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#202020" style="background-color:#202020;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="hero-bg" align="left" valign="bottom" bgcolor="#202020" style="background-color:#202020;background-image:url('https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/hero-01-26.jpg');background-repeat:no-repeat;background-position:center top;background-size:600px 420px;">
+            <!--[if gte mso 9]>
+            <v:image xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:420px;border:0;display:inline-block;" src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/hero-01-26.jpg" />
+            <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="false" stroke="false" style="position:absolute;top:0;left:0;width:600px;height:420px;">
+            <v:textbox inset="0,0,0,0"><![endif]-->
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+              <tr><td class="hero-spacer" height="229" style="height:229px;font-size:0;line-height:0;"><div style="height:229px;line-height:229px;font-size:4px;">&nbsp;</div></td></tr>
+              <tr>
+                <td class="pad32" align="left" style="padding:0 32px 34px 32px;">
+
+                  <!-- oranžový chip: oranžový TEXT má na fotce jen 1,1:1, bílý na oranžové ploše drží vždy -->
+                  <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin:0 0 16px 0;">
+                    <tr>
+                      <td bgcolor="#E5712C" style="background-color:#E5712C;border-radius:3px;padding:6px 11px 5px 11px;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#FFFFFF;">
+                        Predikce na rok 2026
+                      </td>
+                    </tr>
+                  </table>
+
+                  <p class="h1 h1-m" style="margin:0 0 14px 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:34px;line-height:37px;font-weight:700;letter-spacing:-1px;color:#FFFFFF;mso-line-height-rule:exactly;">
+                    Věštíme, co přinese 2026 v marketingu<span style="color:#E5712C;">.</span>
+                  </p>
+                  <p class="lead-m" style="margin:0 0 0 0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:18px;line-height:28px;font-weight:400;color:#DEDAD5;mso-line-height-rule:exactly;">
+                    Zeptali jsme se čtyř specialistů, co čekat v novém roce.
+                  </p>
+
+                </td>
+              </tr>
+            </table>
+            <!--[if gte mso 9]></v:textbox></v:rect><![endif]-->
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 03 | Gradientní lišta -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+  <tr>
+    <td height="4" bgcolor="#ED692C" style="height:4px;font-size:0;line-height:0;background-color:#ED692C;background-image:linear-gradient(90deg,#FAB418 0%,#ED692C 33%,#E9C623 66%,#BDD46B 100%);"><div style="height:4px;line-height:4px;font-size:4px;">&nbsp;</div></td>
+  </tr>
+</table>
+<!-- 04 | Nadpis sekce -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32 pad-sec" align="left" style="padding:38px 32px 0 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td align="left" valign="middle" style="padding:0 14px 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#C25A1E;white-space:nowrap;" class="dk-orange">
+                  Predikce
+                </td>
+                <td width="100%" valign="middle" style="padding:0;">
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                    <tr><td style="font-size:0;line-height:0;border-top:1px solid #E6DED3;" class="dk-surface-2">&#8203;</td></tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <p class="h2-m dk-white" style="margin:20px 0 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:26px;line-height:30px;font-weight:700;letter-spacing:-0.6px;color:#1A1A1A;mso-line-height-rule:exactly;">
+              Co věští naše data na rok 2026<span style="color:#E5712C;">?</span>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 05 | Text s odkazem -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:14px 32px 8px 32px;">
+            <p class="p-m dk-soft" style="margin:0 0 12px 0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:17px;line-height:28px;font-weight:400;color:#4A4A48;mso-line-height-rule:exactly;">
+              Vytáhli jsme křišťálovou kouli a zeptali se čtyř lidí z týmu, co podle nich přinese nový rok v jejich disciplíně.
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 06 | Citace s portrétem -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:0 32px 0 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-top:1px solid #E6DED3;" class="dk-hair">
+              <tr>
+                <td class="stack stack-gap portrait-m" align="left" valign="top" width="90" style="width:90px;padding:22px 18px 22px 0;">
+                  <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/portret-benda.png" width="72" height="72" alt="Tomáš Benda" style="display:block;width:72px;height:72px;border-radius:36px;border:0;" />
+                </td>
+                <td class="stack" align="left" valign="top" style="padding:22px 0 22px 0;">
+                  <p class="p-m dk-soft" style="margin:0 0 10px 0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:16.5px;line-height:26px;font-weight:400;color:#4A4A48;mso-line-height-rule:exactly;">
+                    „Nedůvěra v AI‑generovaný obsah roste, takže nejefektivnější content strategií bude <b style="font-weight:500;color:#1A1A1A;" class="dk-white">návrat k autenticitě</b> — opravdovému obsahu od mikro‑influencerů a zaměstnanců nebo žánrově psaným blogům."
+                  </p>
+                  <p class="dk-white" style="margin:0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#1A1A1A;">Tomáš Benda</p>
+                  <p class="dk-caption" style="margin:0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;font-weight:400;color:#6E6A64;">Head of Content</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 07 | Citace s portrétem -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:0 32px 0 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-top:1px solid #E6DED3;" class="dk-hair">
+              <tr>
+                <td class="stack stack-gap portrait-m" align="left" valign="top" width="90" style="width:90px;padding:22px 18px 22px 0;">
+                  <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/portret-kovalcik.png" width="72" height="72" alt="Honza Kovalčík" style="display:block;width:72px;height:72px;border-radius:36px;border:0;" />
+                </td>
+                <td class="stack" align="left" valign="top" style="padding:22px 0 22px 0;">
+                  <p class="p-m dk-soft" style="margin:0 0 10px 0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:16.5px;line-height:26px;font-weight:400;color:#4A4A48;mso-line-height-rule:exactly;">
+                    „Platí zde jedno: <b style="font-weight:500;color:#1A1A1A;" class="dk-white">AI zesiluje to, co už máte.</b> Kdo má dobrá data a funkční procesy, získá konkurenční výhodu. Kdo má v procesech chaos, prohloubí jej."
+                  </p>
+                  <p class="dk-white" style="margin:0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#1A1A1A;">Honza Kovalčík</p>
+                  <p class="dk-caption" style="margin:0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;font-weight:400;color:#6E6A64;">SEO &amp; AI specialist</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 08 | Citace s portrétem -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:0 32px 0 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-top:1px solid #E6DED3;" class="dk-hair">
+              <tr>
+                <td class="stack stack-gap portrait-m" align="left" valign="top" width="90" style="width:90px;padding:22px 18px 22px 0;">
+                  <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/portret-kunesova.png" width="72" height="72" alt="Vendy Kunešová" style="display:block;width:72px;height:72px;border-radius:36px;border:0;" />
+                </td>
+                <td class="stack" align="left" valign="top" style="padding:22px 0 22px 0;">
+                  <p class="p-m dk-soft" style="margin:0 0 10px 0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:16.5px;line-height:26px;font-weight:400;color:#4A4A48;mso-line-height-rule:exactly;">
+                    „Začneme se odklánět od trendových soundů a šablonových formátů. Fungovat budou voiceovery, vyprávění bez filtru a lidský chaos. Nestačí ale jen <b style="font-weight:500;color:#1A1A1A;" class="dk-white">být real</b> — rozhodovat bude i srozumitelnost."
+                  </p>
+                  <p class="dk-white" style="margin:0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#1A1A1A;">Vendy Kunešová</p>
+                  <p class="dk-caption" style="margin:0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;font-weight:400;color:#6E6A64;">Social teamleader</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 09 | Citace s portrétem -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:0 32px 0 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-top:1px solid #E6DED3;" class="dk-hair">
+              <tr>
+                <td class="stack stack-gap portrait-m" align="left" valign="top" width="90" style="width:90px;padding:22px 18px 22px 0;">
+                  <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/portret-sikora.png" width="72" height="72" alt="Martin Sikora" style="display:block;width:72px;height:72px;border-radius:36px;border:0;" />
+                </td>
+                <td class="stack" align="left" valign="top" style="padding:22px 0 22px 0;">
+                  <p class="p-m dk-soft" style="margin:0 0 10px 0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:16.5px;line-height:26px;font-weight:400;color:#4A4A48;mso-line-height-rule:exactly;">
+                    „AI bude hluboce integrovaná v reklamních systémech, ale její viditelné využívání v samotných reklamách bude slábnout. Na hodnotě získají <b style="font-weight:500;color:#1A1A1A;" class="dk-white">manuálně tvořené texty a bannery</b>."
+                  </p>
+                  <p class="dk-white" style="margin:0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#1A1A1A;">Martin Sikora</p>
+                  <p class="dk-caption" style="margin:0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;font-weight:400;color:#6E6A64;">PPC specialist</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 10 | Nadpis sekce -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32 pad-sec" align="left" style="padding:38px 32px 0 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td align="left" valign="middle" style="padding:0 14px 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#C25A1E;white-space:nowrap;" class="dk-orange">
+                  UX
+                </td>
+                <td width="100%" valign="middle" style="padding:0;">
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                    <tr><td style="font-size:0;line-height:0;border-top:1px solid #E6DED3;" class="dk-surface-2">&#8203;</td></tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <p class="h2-m dk-white" style="margin:20px 0 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:26px;line-height:30px;font-weight:700;letter-spacing:-0.6px;color:#1A1A1A;mso-line-height-rule:exactly;">
+              A/B testování už není jeden izolovaný test<span style="color:#E5712C;">.</span>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 11 | Text s odkazem -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:14px 32px 0 32px;">
+            <p class="p-m dk-soft" style="margin:0 0 12px 0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:17px;line-height:28px;font-weight:400;color:#4A4A48;mso-line-height-rule:exactly;">
+              AI přebírá rutinní práci, zrychluje experimentování a umožňuje soustředit se na to podstatné — porozumění rozhodování uživatelů. Místo jednoho testu dnes vznikají celé sady experimentů, které běží a vyhodnocují se paralelně.
+            </p>
+            <p class="p-m dk-soft" style="margin:0 0 0 0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:17px;line-height:28px;font-weight:400;color:#4A4A48;mso-line-height-rule:exactly;">
+              V evisions to ověřujeme v praxi pomocí <b style="font-weight:500;color:#1A1A1A;" class="dk-white">VWO s Copilot AI</b>, který pomáhá s analýzou dat i návrhem testovacích hypotéz na základě uživatelského chování.
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 12 | CTA tlačítko -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:6px 32px 40px 32px;">
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation" class="btn-m">
+              <tr>
+                <td bgcolor="#E5712C" align="center" style="background-color:#E5712C;border-radius:4px;">
+                  <a class="btn-keep btn-m" href="https://www.evisions.cz/ux-a-cx/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=klientsky-nl-01-26&amp;utm_content=ux" target="_blank" style="display:inline-block;padding:14px 26px;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:15px;line-height:16px;font-weight:600;color:#FFFFFF;text-decoration:none;border-radius:4px;">
+                    Začněte s námi testovat
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 13 | Nadpis sekce -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32 pad-sec" align="left" style="padding:38px 32px 0 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td align="left" valign="middle" style="padding:0 14px 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#C25A1E;white-space:nowrap;" class="dk-orange">
+                  Insight
+                </td>
+                <td width="100%" valign="middle" style="padding:0;">
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                    <tr><td style="font-size:0;line-height:0;border-top:1px solid #E6DED3;" class="dk-surface-2">&#8203;</td></tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <p class="h2-m dk-white" style="margin:20px 0 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:26px;line-height:30px;font-weight:700;letter-spacing:-0.6px;color:#1A1A1A;mso-line-height-rule:exactly;">
+              Fresh start effect v onlinu<span style="color:#E5712C;">.</span>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 14 | Text s odkazem -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:14px 32px 40px 32px;">
+            <p class="p-m dk-soft" style="margin:0 0 12px 0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:17px;line-height:28px;font-weight:400;color:#4A4A48;mso-line-height-rule:exactly;">
+              Výzkumy Nielsen Norman Group ukazují, že lidé po časových milnících — nový rok, nový měsíc, nový životní kontext — výrazně častěji přehodnocují své chování a <b style="font-weight:500;color:#1A1A1A;" class="dk-white">jsou otevřenější změně</b>.
+            </p>
+            <p class="p-m dk-soft" style="margin:0 0 0 0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:17px;line-height:28px;font-weight:400;color:#4A4A48;mso-line-height-rule:exactly;">
+              V datech se to projevuje nárůstem vyhledávání aspirativních témat a vyšší ochotou změnit stávající řešení. Dává proto smysl s těmito momenty pracovat i v tom, kdy a jak uživatelům změnu představujeme.
+            </p>
+            <p style="margin:18px 0 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;">
+              <a href="https://www.nngroup.com/articles/fresh-start-effect/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=klientsky-nl-01-26&amp;utm_content=insight" target="_blank" class="dk-white" style="font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#1A1A1A;text-decoration:none;border-bottom:2px solid #E5712C;padding-bottom:3px;">Přečíst celý insight</a><span class="dk-orange" style="color:#C25A1E;">&nbsp;&nbsp;&rarr;</span>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 15 | Nadpis sekce -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32 pad-sec" align="left" style="padding:38px 32px 0 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td align="left" valign="middle" style="padding:0 14px 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#C25A1E;white-space:nowrap;" class="dk-orange">
+                  SEO
+                </td>
+                <td width="100%" valign="middle" style="padding:0;">
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                    <tr><td style="font-size:0;line-height:0;border-top:1px solid #E6DED3;" class="dk-surface-2">&#8203;</td></tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <p class="h2-m dk-white" style="margin:20px 0 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:26px;line-height:30px;font-weight:700;letter-spacing:-0.6px;color:#1A1A1A;mso-line-height-rule:exactly;">
+              SEO neumírá. Jen se mění<span style="color:#E5712C;">.</span>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 16 | Text s odkazem -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:14px 32px 40px 32px;">
+            <p class="p-m dk-soft" style="margin:0 0 12px 0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:17px;line-height:28px;font-weight:400;color:#4A4A48;mso-line-height-rule:exactly;">
+              S nástupem AI do vyhledávání se změnilo chování uživatelů a mnoho webů přišlo o část organických prokliků. To je nová realita.
+            </p>
+            <p class="p-m dk-soft" style="margin:0 0 0 0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:17px;line-height:28px;font-weight:400;color:#4A4A48;mso-line-height-rule:exactly;">
+              Vidět budou ti, kdo vsadí na technicky čistý web, rychlost, EEAT a obsah postavený na <b style="font-weight:500;color:#1A1A1A;" class="dk-white">skutečných potřebách uživatelů</b>. Ze Search Engine Optimisation se stává Search Everywhere Optimisation.
+            </p>
+            <p style="margin:18px 0 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;">
+              <a href="https://www.evisions.cz/seo-ai-audit/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=klientsky-nl-01-26&amp;utm_content=seo" target="_blank" class="dk-white" style="font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#1A1A1A;text-decoration:none;border-bottom:2px solid #E5712C;padding-bottom:3px;">Zjistit, jak mě vidí AI</a><span class="dk-orange" style="color:#C25A1E;">&nbsp;&nbsp;&rarr;</span>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 17 | Nadpis sekce -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#191919" class="dk-surface-2" style="background-color:#191919;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32 pad-sec" align="left" style="padding:38px 32px 0 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td align="left" valign="middle" style="padding:0 14px 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#E5712C;white-space:nowrap;" class="dk-orange">
+                  Zpětné zrcátko
+                </td>
+                <td width="100%" valign="middle" style="padding:0;">
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                    <tr><td style="font-size:0;line-height:0;border-top:1px solid #333330;" class="dk-surface-2">&#8203;</td></tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <p class="h2-m dk-white" style="margin:20px 0 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:26px;line-height:30px;font-weight:700;letter-spacing:-0.6px;color:#FFFFFF;mso-line-height-rule:exactly;">
+              Co se nám povedlo v roce 2025<span style="color:#E5712C;">.</span>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 18 | Text s odkazem -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#191919" class="dk-surface-2" style="background-color:#191919;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:14px 32px 6px 32px;">
+            <p class="p-m dk-soft" style="margin:0 0 12px 0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:17px;line-height:28px;font-weight:400;color:#BFBBB6;mso-line-height-rule:exactly;">
+              Rok plný změn: nové kanceláře, nová vizuální identita, nový web. Přednášky na SEO Restartu, Shopcampu i SEO a AI Bootcampu. A <b style="font-weight:500;color:#FFFFFF;" class="dk-white">1. místo z Webtop100</b> plus pět dalších ocenění z IEA.
+            </p>
+            <p class="p-m dk-soft" style="margin:0 0 0 0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:17px;line-height:28px;font-weight:400;color:#BFBBB6;mso-line-height-rule:exactly;">
+              Jak jsme pomohli <b style="font-weight:500;color:#FFFFFF;" class="dk-white">Kalkulátor.cz vyrůst o 700 % v organiku</b>, jsme rozepsali v nejnovější case study.
+            </p>
+            <p style="margin:18px 0 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;">
+              <a href="https://www.evisions.cz/blog/z-nuly-na-seo-hvezdu-pomohli-jsme-kalkulator-cz-vyrust-o-700-diky-chytre-obsahove-strategii/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=klientsky-nl-01-26&amp;utm_content=casestudy" target="_blank" class="dk-white" style="font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:15px;font-weight:600;color:#FFFFFF;text-decoration:none;border-bottom:2px solid #E5712C;padding-bottom:3px;">Přečíst case study</a><span class="dk-orange" style="color:#E5712C;">&nbsp;&nbsp;&rarr;</span>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 19 | Tři obrázky -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#191919" class="dk-surface-2" style="background-color:#191919;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:26px 32px 34px 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td width="33%" align="left" valign="top" style="padding:0 5px 0 0;">
+                  <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/ok-fsv.jpg" width="176" alt="Učili jsme Online marketing na Univerzitě Karlově" style="display:block;width:100%;max-width:176px;height:auto;border-radius:3px;border:0;" />
+                  <p style="margin:7px 0 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;font-weight:500;color:#8F8B86;">Učili jsme Online marketing na UK</p>
+                </td>
+                <td width="33%" align="left" valign="top" style="padding:0 5px;">
+                  <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/ok-webtop.jpg" width="176" alt="1. místo, Webtop100" style="display:block;width:100%;max-width:176px;height:auto;border-radius:3px;border:0;" />
+                  <p style="margin:7px 0 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;font-weight:500;color:#8F8B86;">1. místo, Webtop100</p>
+                </td>
+                <td width="33%" align="left" valign="top" style="padding:0 0 0 5px;">
+                  <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/ok-iea.jpg" width="176" alt="Pět ocenění z IEA" style="display:block;width:100%;max-width:176px;height:auto;border-radius:3px;border:0;" />
+                  <p style="margin:7px 0 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:11px;line-height:15px;font-weight:500;color:#8F8B86;">Pět ocenění z IEA</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 20 | Text s odkazem -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#191919" class="dk-surface-2" style="background-color:#191919;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:30px 32px 16px 32px;">
+            <p class="p-m dk-soft" style="margin:0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:17px;line-height:28px;font-weight:400;color:#BFBBB6;mso-line-height-rule:exactly;">
+              A vánoční večírek se taky povedl — na téma <b style="font-weight:500;color:#FFFFFF;" class="dk-white">Golden 20's</b>, takže jsme se všichni hezky vyfikli.
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 21 | Tři obrázky bez popisků -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#191919" class="dk-surface-2" style="background-color:#191919;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:0 32px 38px 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td width="33%" align="left" valign="top" style="padding:0 5px 0 0;">
+                  <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/party-1.jpg" width="176" alt="Vánoční večírek Golden 20's" style="display:block;width:100%;max-width:176px;height:auto;border-radius:3px;border:0;" />
+                </td>
+                <td width="33%" align="left" valign="top" style="padding:0 5px;">
+                  <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/party-2.jpg" width="176" alt="Vánoční večírek Golden 20's" style="display:block;width:100%;max-width:176px;height:auto;border-radius:3px;border:0;" />
+                </td>
+                <td width="33%" align="left" valign="top" style="padding:0 0 0 5px;">
+                  <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/party-3.jpg" width="176" alt="Vánoční večírek Golden 20's" style="display:block;width:100%;max-width:176px;height:auto;border-radius:3px;border:0;" />
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 22 | Nadpis sekce -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32 pad-sec" align="left" style="padding:38px 32px 0 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td align="left" valign="middle" style="padding:0 14px 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:11px;line-height:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#C25A1E;white-space:nowrap;" class="dk-orange">
+                  Tipy pod čarou
+                </td>
+                <td width="100%" valign="middle" style="padding:0;">
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                    <tr><td style="font-size:0;line-height:0;border-top:1px solid #E6DED3;" class="dk-surface-2">&#8203;</td></tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <p class="h2-m dk-white" style="margin:20px 0 0 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:26px;line-height:30px;font-weight:700;letter-spacing:-0.6px;color:#1A1A1A;mso-line-height-rule:exactly;">
+              Co stojí za váš čas<span style="color:#E5712C;">.</span>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 23 | Byline s portrétem -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:6px 32px 6px 32px;">
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td align="left" valign="middle" width="56" style="width:56px;padding:0 12px 0 0;">
+                  <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/portret-benda.png" width="44" height="44" alt="Tomáš Benda" style="display:block;width:44px;height:44px;border-radius:22px;border:0;" />
+                </td>
+                <td align="left" valign="middle" style="padding:0;">
+                  <p class="dk-white" style="margin:0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:13px;line-height:18px;font-weight:600;color:#1A1A1A;">Vybral Tomáš Benda</p>
+                  <p class="dk-caption" style="margin:0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;font-weight:400;color:#6E6A64;">Head of Content</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 24 | Tip pod čarou -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:0 32px 0 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-top:1px solid #E6DED3;" class="dk-hair">
+              <tr>
+                <td class="thumb-m" align="left" valign="top" width="112" style="width:112px;padding:18px 16px 18px 0;">
+                  <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/tip-1.jpg" width="96" height="120" alt="Film Norimberk" style="display:block;width:96px;height:120px;border-radius:3px;border:0;" />
+                </td>
+                <td align="left" valign="top" style="padding:18px 0 18px 0;">
+                  <p class="dk-orange" style="margin:0 0 6px 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:10px;line-height:13px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#C25A1E;">Film</p>
+                  <p class="p-m dk-soft" style="margin:0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:15.5px;line-height:24px;font-weight:400;color:#4A4A48;mso-line-height-rule:exactly;">
+                    <a href="https://www.csfd.cz/film/1574711-norimberk/prehled/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=klientsky-nl-01-26" target="_blank" class="dk-soft" style="color:#4A4A48;text-decoration:underline;">Norimberk</a> — Russell Crowe coby Hitlerova pravá ruka Hermann Göring si hlasitě říká o Oscara.
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 25 | Tip pod čarou -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:0 32px 0 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-top:1px solid #E6DED3;" class="dk-hair">
+              <tr>
+                <td class="thumb-m" align="left" valign="top" width="112" style="width:112px;padding:18px 16px 18px 0;">
+                  <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/tip-2.jpg" width="96" height="120" alt="Film Rodina k pronájmu" style="display:block;width:96px;height:120px;border-radius:3px;border:0;" />
+                </td>
+                <td align="left" valign="top" style="padding:18px 0 18px 0;">
+                  <p class="dk-orange" style="margin:0 0 6px 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:10px;line-height:13px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#C25A1E;">Film</p>
+                  <p class="p-m dk-soft" style="margin:0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:15.5px;line-height:24px;font-weight:400;color:#4A4A48;mso-line-height-rule:exactly;">
+                    <a href="https://www.csfd.cz/film/1702701-rodina-k-pronajmu/prehled/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=klientsky-nl-01-26" target="_blank" class="dk-soft" style="color:#4A4A48;text-decoration:underline;">Rodina k pronájmu</a> — japonský film se zajímavou premisou: co kdybychom si mohli do života pronajmout úplně kohokoli?
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 26 | Tip pod čarou -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:0 32px 0 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-top:1px solid #E6DED3;" class="dk-hair">
+              <tr>
+                <td class="thumb-m" align="left" valign="top" width="112" style="width:112px;padding:18px 16px 18px 0;">
+                  <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/tip-3.jpg" width="96" height="120" alt="Ať vám visí na rtech" style="display:block;width:96px;height:120px;border-radius:3px;border:0;" />
+                </td>
+                <td align="left" valign="top" style="padding:18px 0 18px 0;">
+                  <p class="dk-orange" style="margin:0 0 6px 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:10px;line-height:13px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#C25A1E;">Kniha</p>
+                  <p class="p-m dk-soft" style="margin:0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:15.5px;line-height:24px;font-weight:400;color:#4A4A48;mso-line-height-rule:exactly;">
+                    <a href="https://www.melvil.cz/kniha-at-vam-visi-na-rtech/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=klientsky-nl-01-26" target="_blank" class="dk-soft" style="color:#4A4A48;text-decoration:underline;">Ať vám visí na rtech</a> — must‑read pro všechny copywritery o síle storytellingu, vychází v Melvilu.
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 27 | Tip pod čarou -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:0 32px 0 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-top:1px solid #E6DED3;" class="dk-hair">
+              <tr>
+                <td class="thumb-m" align="left" valign="top" width="112" style="width:112px;padding:18px 16px 18px 0;">
+                  <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/tip-4.jpg" width="96" height="120" alt="Urgent, HBO" style="display:block;width:96px;height:120px;border-radius:3px;border:0;" />
+                </td>
+                <td align="left" valign="top" style="padding:18px 0 18px 0;">
+                  <p class="dk-orange" style="margin:0 0 6px 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:10px;line-height:13px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#C25A1E;">Seriál</p>
+                  <p class="p-m dk-soft" style="margin:0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:15.5px;line-height:24px;font-weight:400;color:#4A4A48;mso-line-height-rule:exactly;">
+                    <a href="https://www.csfd.cz/film/1563341-urgent/prehled/?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=klientsky-nl-01-26" target="_blank" class="dk-soft" style="color:#4A4A48;text-decoration:underline;">Urgent</a> — na HBO začala druhá série nejlepšího seriálu z nemocničního prostředí ever.
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 28 | Tip pod čarou -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#FDF8F2" class="dk-surface" style="background-color:#FDF8F2;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="left" style="padding:0 32px 22px 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-top:1px solid #E6DED3;" class="dk-hair">
+              <tr>
+                <td class="thumb-m" align="left" valign="top" width="112" style="width:112px;padding:18px 16px 18px 0;">
+                  <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/tip-5.jpg" width="96" height="120" alt="Pizza Diskotéka" style="display:block;width:96px;height:120px;border-radius:3px;border:0;" />
+                </td>
+                <td align="left" valign="top" style="padding:18px 0 18px 0;">
+                  <p class="dk-orange" style="margin:0 0 6px 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:10px;line-height:13px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:#C25A1E;">Gastro</p>
+                  <p class="p-m dk-soft" style="margin:0;font-family:'Lora',Georgia,'Times New Roman',serif;font-size:15.5px;line-height:24px;font-weight:400;color:#4A4A48;mso-line-height-rule:exactly;">
+                    <a href="https://www.instagram.com/diskoteka.pizza?utm_source=newsletter&amp;utm_medium=email&amp;utm_campaign=klientsky-nl-01-26" target="_blank" class="dk-soft" style="color:#4A4A48;text-decoration:underline;">Pizza Diskotéka</a> v Dejvicích bude nejlepší neapolská pizza, kterou jste kdy jedli.
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- 29 | Patička -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#202020" style="background-color:#202020;">
+  <tr>
+    <td height="4" bgcolor="#ED692C" style="height:4px;font-size:0;line-height:0;background-color:#ED692C;background-image:linear-gradient(90deg,#FAB418 0%,#ED692C 33%,#E9C623 66%,#BDD46B 100%);"><div style="height:4px;line-height:4px;font-size:4px;">&nbsp;</div></td>
+  </tr>
+  <tr>
+    <td align="center" style="padding:0;">
+      <table class="w600" width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:600px;max-width:600px;">
+        <tr>
+          <td class="pad32" align="center" style="padding:40px 32px 34px 32px;">
+
+            <img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/logo-white.png" width="110" height="21" alt="evisions" style="display:block;width:110px;height:21px;margin:0 auto 22px auto;border:0;color:#FFFFFF;font-family:'Inter Tight',Arial,sans-serif;font-size:17px;font-weight:700;" />
+
+            <p style="margin:0 0 22px 0;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:13px;line-height:21px;font-weight:400;color:#A29D96;">
+              Rustonka, Rohanské nábřeží 693/10, budova R2<br />
+              Praha 8 – Karlín, 186 00
+            </p>
+
+            <table border="0" cellpadding="0" cellspacing="0" role="presentation" align="center" style="margin:0 auto 24px auto;">
+              <tr>
+                <td style="padding:0 8px;"><a href="https://www.facebook.com/evisions.advertising" target="_blank"><img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/ico-fb.png" width="22" height="22" alt="Facebook" style="display:block;width:22px;height:22px;border:0;" /></a></td>
+                <td style="padding:0 8px;"><a href="https://www.instagram.com/evisions_cz" target="_blank"><img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/ico-ig.png" width="22" height="22" alt="Instagram" style="display:block;width:22px;height:22px;border:0;" /></a></td>
+                <td style="padding:0 8px;"><a href="https://www.linkedin.com/company/evisions-cz" target="_blank"><img src="https://cdn-smartemailing.cz/676845/media/klientsky%20NL/sablona-2026/ico-li.png" width="22" height="22" alt="LinkedIn" style="display:block;width:22px;height:22px;border:0;" /></a></td>
+              </tr>
+            </table>
+
+            <p style="margin:0 0 24px 0;">
+              <a href="{{webversion}}" target="_blank" style="font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#FFFFFF;text-decoration:none;border-bottom:1px solid #E5712C;padding-bottom:3px;">Zobrazit v prohlížeči</a>
+            </p>
+
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td align="center" style="padding:20px 0 0 0;border-top:1px solid #333330;font-family:'Inter Tight',Arial,Helvetica,sans-serif;font-size:11px;line-height:18px;font-weight:400;color:#807B75;">
+                  Tento e‑mail byl odeslán na adresu {{df_emailaddress}}. Odesílatelem je {{cl_sendername}}, {{cl_senderemail}}. Podle zákona je obchodním sdělením.<br />
+                  <a href="{{unsubscribe}}" target="_blank" style="color:#BFBBB6;text-decoration:underline;">Odhlásit se z odběru</a>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

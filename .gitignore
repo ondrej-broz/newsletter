@@ -1,0 +1,15 @@
+# Generovane nahledy s obrazky vlozenymi jako base64 - odvoditelne ze zdroje
+# a v gitu by nadelaly megabajty historie pri kazde regeneraci.
+nahled-lokalni.html
+nahled-emailing.html
+nahled-header.html
+
+# Pracovni soubory
+_*.py
+_*.txt
+*.tmp
+
+# OS
+desktop.ini
+Thumbs.db
+.DS_Store
