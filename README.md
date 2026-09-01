@@ -137,8 +137,13 @@ celcích, aniž by se rozpadl layout.
 - **Fallback bez webfontu.** Gmail a Outlook pro Windows Inter Tight ignorují. Nadpisy
   mají ve fallbacku menší velikost a tracking, jinak se zalomí o řádek dřív a vytlačí
   CTA pod zlom.
-- **Dark mode** přes `prefers-color-scheme` plus `[data-ogsc]` pro Outlook.com. Gmail
-  app si invertuje po svém — světlá verze je proto navržená tak, aby cizí inverzi přežila.
+- **Jen světlý režim.** Dark mode byl odstraněn: žádná `prefers-color-scheme` media
+  query, žádná `[data-ogsc]` pravidla, žádné `dk-*` třídy. `<meta name="color-scheme"
+  content="light">` navíc říká klientům, aby si mail neinvertovali sami. Klienti, které
+  to nezajímá (Gmail app, Outlook.com), si invertují po svém tak jako tak — světlá verze
+  je navržená tak, aby to přežila.
+- **Tmavé sekce zůstávají tmavé.** Hlavička, „Zpětné zrcátko" a patička mají `#202020`
+  a `#191919` záměrně, je to součást světlého designu, ne dark mode.
 - **UTM na všech 11 obsahových odkazech.** Stará šablona neměla ani jeden, provoz
   z newsletteru padal v GA4 do direct.
 - **Jedno oranžové tlačítko v celém vydání.** Ostatní akce jsou textové odkazy. Šest
