@@ -13,3 +13,6 @@ _*.txt
 desktop.ini
 Thumbs.db
 .DS_Store
+
+# Lokalni konfigurace Claude Code - nepatri do repa
+.claude/
