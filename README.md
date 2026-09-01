@@ -184,3 +184,12 @@ nevkládej jeho** — vložené obrázky by Gmail strhal a soubor je desetkrát 
 - **Nepoužitý obsah z lednového vydání:** TikTok „Dej Vendy vlasy do skřipce", fotka
   studentů FSV je použitá v mřížce ocenění, UX ilustrace `discover-opportunity`
   vynechaná (v koloně byla skoro kvadratická, 536 × 522 px).
+
+## GitHub Pages
+
+V repu je prázdný soubor `.nojekyll`. **Nemazat.** Bez něj GitHub Pages prohánějí
+obsah Jekyllem, který v HTML interpretuje `{{ ... }}` jako Liquid proměnné — a šablona
+je plná merge tagů SmartEmailingu (`{{unsubscribe}}`, `{{df_emailaddress}}` a další).
+S `.nojekyll` se soubory jen zkopírují, což je pro statické HTML správné a rychlejší.
+
+Live náhled: https://ondrej-broz.github.io/newsletter/
