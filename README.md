@@ -168,10 +168,13 @@ krémového pásu.
 - **Jedno oranžové tlačítko v celém vydání.** Ostatní akce jsou textové odkazy. Šest
   tlačítek pod sebou znamená, že žádné nefunguje. **V heru CTA není** — celý e-mail
   je to vydání, takže tlačítko „Přečíst celé vydání" tam nemělo co dělat.
-- **Názvy rubrik nesou brandové značení.** Bold řez 19 px (17 px na mobilu),
-  `letter-spacing:-0.3px`, tmavý text a **oranžová tečka** `#E5712C` na konci — stejně
+- **Název rubriky je hlavní nadpis sekce.** Bold 30 px (25 px na mobilu),
+  `letter-spacing:-0.8px`, tmavý text a **oranžová tečka** `#E5712C` na konci — stejně
   jako nadpisy na webu. Verzálky s prostrkáním 2 px, které tu byly předtím, působily
   generátorově. Stejné zařízení v menším měřítku (14 px) mají štítky u tipů pod čarou.
+- **Podnadpis pod ním je regular 21 px** (19 px na mobilu), ne bold — jinak by si
+  s názvem rubriky konkuroval. Prostrkání je na regularu uvolněné na `-0.1px`;
+  hodnota `-0.6px` byla nastavená pro bold displayový řez a text by se slepoval.
 - **Jedna dělící linka mezi sekcemi.** Nadpis sekce nese vlasovou linku nad názvem
   rubriky, takže samostatný blok Oddělovač se nad něj nedává. Ve vydání se
   nepoužívá vůbec.
