@@ -45,17 +45,15 @@ výhradně na tuhle jednu složku** — nic jiného na CDN nepotřebuje.
 
 ```
 logo-white.png       632×120    8 kB   bílé logo (hlavička + patička)
-hero-01-26.jpg      1200×840   66 kB   hero vydání (tmavý přechod zapečený v JPEGu)
+hero-01-26.jpg     1200×1040   79 kB   hero vydání (tmavý přechod zapečený v JPEGu)
 portret-benda.png    144×144   32 kB
 portret-kovalcik.png 144×144   30 kB
 portret-kunesova.png 144×144   32 kB
 portret-sikora.png   144×144   30 kB
-ok-fsv.jpg           372×280   21 kB
-ok-webtop.jpg        372×280   25 kB
-ok-iea.jpg           372×280   26 kB
-party-1.jpg          372×372   21 kB
-party-2.jpg          372×372   20 kB
-party-3.jpg          372×372   23 kB
+ok-webtop.jpg        526×396   43 kB   mřížka je 2 fotky, ne 3 -> vyšší rozlišení
+ok-iea.jpg           526×396   47 kB
+party-1.jpg          526×526   35 kB
+party-2.jpg          526×526   33 kB
 tip-1.jpg            192×240   11 kB
 tip-2.jpg            192×240   11 kB
 tip-3.jpg            192×240   11 kB
@@ -113,8 +111,8 @@ Pak:
 | 5 | Text s odkazem | 2 odstavce Lora + odkaz s oranžovým podtržením |
 | 6 | Citace s portrétem | kruhový portrét 72 px, na mobilu se stohuje |
 | 7 | CTA tlačítko | **v jednom vydání použij právě jedno** |
-| 8 | Tři obrázky | s popiskami, tmavá plocha, na mobilu zůstávají vedle sebe |
-| 9 | Tři obrázky bez popisků | fotostrip, tmavá plocha |
+| 8 | Dva obrázky | s popiskami, tmavá plocha, brandový roh `8px 54px 8px 8px` |
+| 9 | Dva obrázky bez popisků | fotostrip, tmavá plocha, brandový roh |
 | 10 | Tip pod čarou | náhled 96 × 120 + kategorie + text |
 | 11 | Byline s portrétem | „Vybral … " — portrét 44 px + jméno a role |
 | 12 | Oddělovač | vlasová linka — **nedávat nad Nadpis sekce**, ten má vlastní linku, vznikly by dvě |
@@ -123,6 +121,27 @@ Pak:
 Každý blok je samostatná tabulka na 100 % šířky s vnořenou tabulkou na 600 px.
 Bloky se navzájem nezanořují, takže se dají přehazovat, duplikovat i mazat po celých
 celcích, aniž by se rozpadl layout.
+
+## Brandové hodnoty — převzaté z CSS webu, ne odhadnuté
+
+Stažené z `evisions.cz/_next/static/chunks/0-swxvogfqz81.css`:
+
+| Prvek | Hodnota na webu | Kde v mailu |
+|---|---|---|
+| `.case__figure` | `border-radius: 8px 54px 8px 8px` | hero a všechny fotky v mřížkách |
+| `.button` | `border-radius: 12px`, `padding: 12px 24px` | CTA tlačítko |
+| `.button--brand` | `linear-gradient(90deg,#fdb408,#e5712c 50%,#fdb408)`, text `#202020` | CTA tlačítko |
+| `.tag__link` | `border-radius: 16px`, `padding: 5px 12px` | chip v heru |
+
+**Pozor na tmavý text v CTA.** Interní design manuál pro appky říká „bílý text na oranžové",
+ale web u `.button--brand` používá `#202020`. Mail je client-facing, takže platí web.
+Kontrast `#202020` na nejsvětlejším místě gradientu je vysoký, na `#E5712C` 5,2 : 1.
+
+**Gradient v Outlooku nefunguje** — spadne na `bgcolor="#E5712C"`, tmavý text na něm drží.
+
+**Hero musí ležet na kontrastní ploše.** Blok hera má proto podklad `#FDF8F2`, ne `#202020` —
+jinak by zaoblené rohy nebyly vidět (tmavá na tmavé). Fotka se tím stává kartou uprostřed
+krémového pásu.
 
 ## Co je v šabloně vědomě zabudované
 
