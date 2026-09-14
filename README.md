@@ -107,15 +107,15 @@ Pak:
 | 1 | Hlavička s logem | tmavý pás, logo + řada služeb (na mobilu se skryje) |
 | 2 | Hero – fotka s textem | přechod zapečený v JPEGu, VML pro Outlook |
 | 3 | Gradientní lišta | CSS gradient, v Outlooku plná `#ED692C` |
-| 4 | Nadpis sekce | eyebrow + vlasová linka + nadpis |
+| 4 | Nadpis sekce | vlasová linka nahoru + název rubriky + nadpis |
 | 5 | Text s odkazem | 2 odstavce Lora + odkaz s oranžovým podtržením |
 | 6 | Citace s portrétem | kruhový portrét 72 px, na mobilu se stohuje |
 | 7 | CTA tlačítko | **v jednom vydání použij právě jedno** |
 | 8 | Dva obrázky | s popiskami, tmavá plocha, brandový roh `8px 54px 8px 8px` |
 | 9 | Dva obrázky bez popisků | fotostrip, tmavá plocha, brandový roh |
-| 10 | Tip pod čarou | náhled 96 × 120 + kategorie + text |
+| 10 | Tip pod čarou | náhled 96 × 120 (roh `4px 28px 4px 4px`) + kategorie + text |
 | 11 | Byline s portrétem | „Vybral … " — portrét 44 px + jméno a role |
-| 12 | Oddělovač | vlasová linka — **nedávat nad Nadpis sekce**, ten má vlastní linku, vznikly by dvě |
+| 12 | Oddělovač | vlasová linka — **nedávat nad Nadpis sekce**, ten má vlastní linku nahoře, vznikly by dvě |
 | 13 | Patička | **nikdy nemazat** — povinné náležitosti a odhlášení |
 
 Každý blok je samostatná tabulka na 100 % šířky s vnořenou tabulkou na 600 px.
@@ -168,8 +168,13 @@ krémového pásu.
 - **Jedno oranžové tlačítko v celém vydání.** Ostatní akce jsou textové odkazy. Šest
   tlačítek pod sebou znamená, že žádné nefunguje. **V heru CTA není** — celý e-mail
   je to vydání, takže tlačítko „Přečíst celé vydání" tam nemělo co dělat.
-- **Jedna dělící linka mezi sekcemi.** Nadpis sekce nese vlasovou linku vedle eyebrow,
-  takže samostatný blok Oddělovač se nad něj nedává. Ve vydání se nepoužívá vůbec.
+- **Názvy rubrik nesou brandové značení.** Bold řez 19 px (17 px na mobilu),
+  `letter-spacing:-0.3px`, tmavý text a **oranžová tečka** `#E5712C` na konci — stejně
+  jako nadpisy na webu. Verzálky s prostrkáním 2 px, které tu byly předtím, působily
+  generátorově. Stejné zařízení v menším měřítku (14 px) mají štítky u tipů pod čarou.
+- **Jedna dělící linka mezi sekcemi.** Nadpis sekce nese vlasovou linku nad názvem
+  rubriky, takže samostatný blok Oddělovač se nad něj nedává. Ve vydání se
+  nepoužívá vůbec.
 - **Výška hera 420 px desktop / 360 px mobil** je odměřená, ne odhadnutá, a musí se
   rovnat rozměru VML rectu pro Outlook. Když se změní text v heru, změní se i potřebný
   `hero-spacer` (dnes 229 px / 158 px) — jinak v Outlooku vznikne ořez nebo mezera.
