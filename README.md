@@ -105,7 +105,7 @@ Pak:
 | # | Blok | Poznámka |
 |---|---|---|
 | 1 | Hlavička s logem | tmavý pás, logo + řada služeb (na mobilu se skryje) |
-| 2 | Hero – fotka s textem | přechod zapečený v JPEGu, VML pro Outlook |
+| 2 | Hero – fotka s textem | přechod zapečený v JPEGu, VML pro Outlook, roh `0 54px 0 0` |
 | 3 | Gradientní lišta | CSS gradient, v Outlooku plná `#ED692C` |
 | 4 | Nadpis sekce | vlasová linka nahoru + název rubriky + nadpis |
 | 5 | Text s odkazem | 2 odstavce Lora + odkaz s oranžovým podtržením |
@@ -168,8 +168,8 @@ krémového pásu.
 - **Jedno oranžové tlačítko v celém vydání.** Ostatní akce jsou textové odkazy. Šest
   tlačítek pod sebou znamená, že žádné nefunguje. **V heru CTA není** — celý e-mail
   je to vydání, takže tlačítko „Přečíst celé vydání" tam nemělo co dělat.
-- **Název rubriky je hlavní nadpis sekce.** Bold 30 px (25 px na mobilu),
-  `letter-spacing:-0.8px`, tmavý text a **oranžová tečka** `#E5712C` na konci — stejně
+- **Název rubriky je hlavní nadpis sekce.** Bold 36 px (29 px na mobilu),
+  `letter-spacing:-1px`, tmavý text a **oranžová tečka** `#E5712C` na konci — stejně
   jako nadpisy na webu. Verzálky s prostrkáním 2 px, které tu byly předtím, působily
   generátorově. Stejné zařízení v menším měřítku (14 px) mají štítky u tipů pod čarou.
 - **Podnadpis pod ním je regular 21 px** (19 px na mobilu), ne bold — jinak by si
