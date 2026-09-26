@@ -106,8 +106,8 @@ Pak:
 |---|---|---|
 | 1 | Hlavička s logem | tmavý pás, logo + řada služeb (na mobilu se skryje) |
 | 2 | Hero – fotka s textem | přechod zapečený v JPEGu, VML pro Outlook, roh `0 54px 0 0` |
-| 3 | Gradientní lišta | CSS gradient, v Outlooku plná `#ED692C` |
-| 4 | Nadpis sekce | vlasová linka nahoru + název rubriky + nadpis |
+| 3 | Gradientní lišta | CSS gradient, **600 px jako fotka**, v Outlooku plná `#ED692C` |
+| 4 | Nadpis sekce | název rubriky + podnadpis, **bez linky** — odděluje barva plochy |
 | 5 | Text s odkazem | 2 odstavce Lora + odkaz s oranžovým podtržením |
 | 6 | Citace s portrétem | kruhový portrét 72 px, na mobilu se stohuje |
 | 7 | CTA tlačítko | **v jednom vydání použij právě jedno** |
@@ -115,7 +115,7 @@ Pak:
 | 9 | Dva obrázky bez popisků | fotostrip, tmavá plocha, brandový roh |
 | 10 | Tip pod čarou | náhled 96 × 120 (roh `4px 28px 4px 4px`) + kategorie + text |
 | 11 | Byline s portrétem | „Vybral … " — portrét 44 px + jméno a role |
-| 12 | Oddělovač | vlasová linka — **nedávat nad Nadpis sekce**, ten má vlastní linku nahoře, vznikly by dvě |
+| 12 | Oddělovač | vlasová linka — jen **uvnitř** sekce (mezi tipy), nikdy mezi sekcemi |
 | 13 | Patička | **nikdy nemazat** — povinné náležitosti a odhlášení |
 
 Každý blok je samostatná tabulka na 100 % šířky s vnořenou tabulkou na 600 px.
@@ -164,15 +164,16 @@ krémového pásu.
 - **Tmavé sekce zůstávají tmavé.** Hlavička, „Zpětné zrcátko" a patička mají `#202020`
   a `#191919` záměrně, je to součást světlého designu, ne dark mode.
 - **Sekce se střídají na dvou podkladech**, aby při scrollování nespývaly: krémová
-  `#FDF8F2` a písková `#F4EADD`, obě přes celou šířku. V tomto vydání Predikce krémová,
+  `#FDF8F2` a písková `#F6EEE4`, obě přes celou šířku. V tomto vydání Predikce krémová,
   UX písková, Insight krémová, SEO písková, Zpětné zrcátko tmavé, Tipy krémové.
   **Žádné dvě sousední sekce nesmí mít stejný podklad** — to je jediné pravidlo,
   pořadí je jinak volné. Podklad se mění na **všech** blocích sekce najednou
   (`bgcolor` i `background-color`), ne jen na bloku s nadpisem.
-- **Kontrast na pískové je oděřený, ne odhadnutý.** Text `#1A1A1A` 14,64 : 1,
-  CTA popisek `#202020` 13,70 : 1, šipka `#C25A1E` 3,70 : 1 — vše prochází.
-  Oranžová `#E5712C` (tečka v nadpisu, podtržení odkazu) má 2,62 : 1, tedy pod
+- **Kontrast na pískové je odměřený, ne odhadnutý.** Text `#1A1A1A` 15,14 : 1,
+  CTA popisek `#202020` 14,17 : 1, šipka `#C25A1E` 3,83 : 1 — vše prochází.
+  Oranžová `#E5712C` (tečka v nadpisu, podtržení odkazu) má 2,71 : 1, tedy pod
   prahem 3 : 1 pro grafické prvky — ale pod ním byla už na krémové (2,95 : 1).
+  Rozdíl obou ploch je 1,089 : 1; zesvětlením o 20 % se zmenšil z 1,126 : 1.
   Jsou to dekorativní prvky vedle textu, který sám prochází s rezervou; kdyby to
   mělo projít i formalě, stačí použít tmavší `#C25A1E` jako u šipky.
 - **UTM na všech 11 obsahových odkazech.** Stará šablona neměla ani jeden, provoz
@@ -187,9 +188,16 @@ krémového pásu.
 - **Podnadpis pod ním je regular 21 px** (19 px na mobilu), ne bold — jinak by si
   s názvem rubriky konkuroval. Prostrkání je na regularu uvolněné na `-0.1px`;
   hodnota `-0.6px` byla nastavená pro bold displayový řez a text by se slepoval.
-- **Jedna dělící linka mezi sekcemi.** Nadpis sekce nese vlasovou linku nad názvem
-  rubriky, takže samostatný blok Oddělovač se nad něj nedává. Ve vydání se
-  nepoužívá vůbec.
+- **Mezi sekcemi není žádná linka.** Odděluje je změna podkladu a linka by dělala
+  totéž podruhé. Vlasová linka zůstává jen **uvnitř** sekce, kde dělí položky
+  seznamu (tipy pod čarou, byline). Kdyby někdy dvě sekce ležely na stejném
+  podkladu, linku je potřeba vrátit — jinak splynou.
+- **Sekce mají 60 px nahoře i dole**, na desktopu i na mobilu. Nahoře to je
+  38 px odsazení buňky + 22 px nad názvem rubriky. Dole se číslo liší blok od
+  bloku, protože některé bloky mají ještě vlastní vnitřní odsazení, které se
+  přičtává: citace 38, CTA 60, text 60, obrázky 60, tip 42. **Při přidaném
+  nebo přehozeném posledním bloku sekce je potřeba spodní odsazení dopočítat
+  znovu**, aby součet zase dal 60.
 - **Výška hera 420 px desktop / 360 px mobil** je odměřená, ne odhadnutá, a musí se
   rovnat rozměru VML rectu pro Outlook. Když se změní text v heru, změní se i potřebný
   `hero-spacer` (dnes 229 px / 158 px) — jinak v Outlooku vznikne ořez nebo mezera.
