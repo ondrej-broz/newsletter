@@ -163,6 +163,18 @@ krémového pásu.
   je navržená tak, aby to přežila.
 - **Tmavé sekce zůstávají tmavé.** Hlavička, „Zpětné zrcátko" a patička mají `#202020`
   a `#191919` záměrně, je to součást světlého designu, ne dark mode.
+- **Sekce se střídají na dvou podkladech**, aby při scrollování nespývaly: krémová
+  `#FDF8F2` a písková `#F4EADD`, obě přes celou šířku. V tomto vydání Predikce krémová,
+  UX písková, Insight krémová, SEO písková, Zpětné zrcátko tmavé, Tipy krémové.
+  **Žádné dvě sousední sekce nesmí mít stejný podklad** — to je jediné pravidlo,
+  pořadí je jinak volné. Podklad se mění na **všech** blocích sekce najednou
+  (`bgcolor` i `background-color`), ne jen na bloku s nadpisem.
+- **Kontrast na pískové je oděřený, ne odhadnutý.** Text `#1A1A1A` 14,64 : 1,
+  CTA popisek `#202020` 13,70 : 1, šipka `#C25A1E` 3,70 : 1 — vše prochází.
+  Oranžová `#E5712C` (tečka v nadpisu, podtržení odkazu) má 2,62 : 1, tedy pod
+  prahem 3 : 1 pro grafické prvky — ale pod ním byla už na krémové (2,95 : 1).
+  Jsou to dekorativní prvky vedle textu, který sám prochází s rezervou; kdyby to
+  mělo projít i formalě, stačí použít tmavší `#C25A1E` jako u šipky.
 - **UTM na všech 11 obsahových odkazech.** Stará šablona neměla ani jeden, provoz
   z newsletteru padal v GA4 do direct.
 - **Jedno oranžové tlačítko v celém vydání.** Ostatní akce jsou textové odkazy. Šest
